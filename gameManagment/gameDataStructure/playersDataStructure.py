@@ -10,7 +10,16 @@ class PlayersData:
                  player_id,
                  player_name):
         """
-        #TODO(Abhishek) Write definition of all variables.
+        @playerID: ID for the given player.
+        @playerName: Name of the player.
+        @playerCards: List of all the cards available to
+                      the player.
+        @isPlayerAvailableForBid: This variable show that current
+                                  player can bid or not.
+        @isStarPlayer: This shows whether this player is player
+                       for the given game.
+        @playerTeam: Defines the team of the player.
+        @playerScore: Defines the total score accumulated by the player.
         """
         self.playerID = player_id
         self.playerName = player_name
@@ -25,13 +34,15 @@ class PlayersData:
         """
         Provide card distribution to given player
         """
-        pass
+        self.playerCards = card_distribution
 
     def canPlayerBid(self, new_bid):
         """
         Determine can player have new bid.
         """
-        pass
+        if self.isPlayerAvailableForBid is True and new_bid > self.currentPlayerMaxBid:
+            return True
+        return False
 
     def useCard(self, card_info):
         """
@@ -39,4 +50,14 @@ class PlayersData:
         card it soo it remove's that particular car from
         pack of his card and return's True.
         """
-        pass
+        if card_info in self.playerCards:
+            self.playerCards.remove(card_info)
+            return True
+        return False
+
+    def updatePlayerTotal(self, new_total):
+        """
+        This method update's the current total for
+        the given player.
+        """
+        self.playerScore = self.playerScore + new_total
