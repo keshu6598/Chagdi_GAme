@@ -20,3 +20,6 @@ WITH_MAIN_PLAYER = 1
 # When clientID is not assigned to given client variable.
 # This ID may be used for spectator also, not sure TBD.
 NO_CLIENT_ID_IS_ASSIGNED = -1
+
+
+# some changes to learn git
