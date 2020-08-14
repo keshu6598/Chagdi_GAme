@@ -49,7 +49,7 @@ def chat():
 	name = current_user.username
 	return render_template('chat.html',name = name,room = room)
 
-#events for chat###############################################
+#events for chat#############################################
 
 def authenticated_only(f):
     @functools.wraps(f)
