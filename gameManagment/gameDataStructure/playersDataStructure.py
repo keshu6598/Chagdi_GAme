@@ -40,3 +40,6 @@ class PlayersData:
         pack of his card and return's True.
         """
         pass
+
+    def to_be_deleted(self, card_info):
+        print(card_info);
